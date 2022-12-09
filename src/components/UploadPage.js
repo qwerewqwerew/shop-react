@@ -1,3 +1,5 @@
+import {API_URL} from "../config/constants";
+
 import { useState } from "react";
 import "./UploadPage.css";
 
@@ -25,9 +27,9 @@ const UploadPage = () => {
 			<div id="load-container">
 				<Form name="uploadForm" onFinish={onSubmit}>
 					<Form.Item name="upload" label={<div className="upload-label">상품 사진</div>}>
-						<Upload name="image" action="http://localhost:8080/image" listType="picture" showUploadList={false} onChange={onChageImage}>
+						<Upload name="image" action={`${API_URL}/image`} listType="picture" showUploadList={false} onChange={onChageImage}>
 							{imageUrl ? (
-								<img id="upload-img" src={`http://localhost:8080/${imageUrl}`}/>
+								<img id="upload-img" src={`${API_URL}/${imageUrl}`}/>
 							):(
 								<div id="upload-img-placeholder">
 									<img src="/images/icons/camera.png" /> 

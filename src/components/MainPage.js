@@ -1,3 +1,4 @@
+import {API_URL} from "../config/constants";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./MainPage.css";
@@ -10,7 +11,7 @@ const MainPage = () => {
 	let [products, setProducts] = React.useState([]);
 	useEffect(() => {
 		axios
-			.get("http://localhost:8080/products")
+			.get(`${API_URL}/products`)
 			.then((res) => {
 				products = res.data.product;
 				setProducts(products);
