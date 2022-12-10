@@ -15,7 +15,6 @@ const MainPage = () => {
 			.then((res) => {
 				products = res.data.product;
 				setProducts(products);
-				console.log(products)
 			})
 			.catch((err) => {
 				return console.log(err);
@@ -37,7 +36,7 @@ const MainPage = () => {
 							<div className="product-card" key={idx}>
 								<Link className="product-link" to={`/product/${product.id}`}>
 									<div>
-										<img className="product-img" src={product.imageUrl} alt={product.name} />
+										<img className="product-img" src={`${API_URL}/${product.imageUrl}`} alt={product.name} />
 									</div>
 									<div className="product-content">
 										<span className="product-name">{product.name}</span>

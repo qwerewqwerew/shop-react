@@ -28,7 +28,7 @@ const ProductPage = () => {
 		<>
 			<div id="image-box">
 				<img
-					src={`/${product.imageUrl}`}
+					src={`${API_URL}/${product.imageUrl}`}
 					alt={product.name}
 				/>
 			</div>
